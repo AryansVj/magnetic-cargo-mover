@@ -1,10 +1,10 @@
 
-AVRASM ver. 2.2.8  F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm Thu Mar 09 12:51:57 2023
+AVRASM ver. 2.2.8  D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm Thu Mar 09 13:51:15 2023
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
-F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc'
+D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
-F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc'
+D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc'
                                  
                                  .include "m328pdef.inc"
                                  
@@ -1066,46 +1066,46 @@ F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm(1)
 000008 b934                      	out	DDRB,r19
 000009 9856                      	CBI DDRD, pd6   ; set PD6 as input (ir sensor input)
 00000a 9857                      	CBI DDRD, pd7   ; switch as input
-00000b 9a54                      	SBI DDRD,pd4	;electromagnet
+                                 	; SBI DDRB, pb4	; electromagnet
                                  
-00000c e228                      	ldi loopCt,oval ; outer loop of delay
-00000d e174                      	ldi motorouterloop,omotor ;motor outer loop count
+00000b e228                      	ldi loopCt,oval ; outer loop of delay
+00000c e174                      	ldi motorouterloop,omotor ;motor outer loop count
                                  
                                  
                                  start:	
                                  	switch:
-00000e 9b4f                      		SBIS PIND, 7 ; when switch is pressed skip the bellow
-00000f cffe                      		rjmp switch
+00000d 9b4f                      		SBIS PIND, 7 ; when switch is pressed skip the bellow
+00000e cffe                      		rjmp switch
                                  
                                  		ir_logic:
-000010 9b4e                      			SBIS PIND, 6 ; skip bellow statement if ir out is logic 1
-000011 c008                      			rjmp reverse_loop
+00000f 9b4e                      			SBIS PIND, 6 ; skip bellow statement if ir out is logic 1
+000010 c008                      			rjmp reverse_loop
                                  			
                                  			;forward
-000012 9a5c                      			sbi portd, pd4 ;magnet on
-000013 d03d                      			rcall delay1sec	;long delay
+000011 9a2c                      			sbi portb, pb4 ; magnet on
+000012 d035                      			rcall delay1sec	; long delay
                                  	
-000014 d016                      			rcall forward	;motor
-000015 d03b                      			rcall delay1sec	;long delay
+000013 d016                      			rcall forward	;motor
+000014 d033                      			rcall delay1sec	;long delay
                                  			;return to the initial position
-000016 985c                      			cbi portd,pd4	;magnet off
-000017 d039                      			rcall delay1sec	;long delay
-000018 d025                      			rcall reverse	;motor
+000015 982c                      			cbi portb,pb4	;magnet off
+000016 d031                      			rcall delay1sec	;long delay
+000017 d021                      			rcall reverse	;motor
                                  
-000019 cff4                      			rjmp switch
+000018 cff4                      			rjmp switch
                                  
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;; reverse motor ;;;;;;;;;;;;
                                  reverse_loop:
-00001a 9a5c                      			sbi portd, pd4 ;magnet on
-00001b d035                      			rcall delay1sec	;long delay
-00001c d021                      			rcall reverse ;motor
-00001d d033                      			rcall delay1sec	;long delay
-00001e 985c                      			cbi portd,pd4	;magnet off
-00001f d031                      			rcall delay1sec	;long delay
-000020 d00a                      			rcall forward ;motor
+000019 9a2c                      			sbi portb, pb4 ; magnet on
+00001a d02d                      			rcall delay1sec	;long delay
+00001b d01d                      			rcall reverse ;motor
+00001c d02b                      			rcall delay1sec	;long delay
+00001d 982c                      			cbi portb, pb4	;magnet off
+00001e d029                      			rcall delay1sec	;long delay
+00001f d00a                      			rcall forward ;motor
                                  	
-000021 cfec                      	rjmp switch
+000020 cfec                      	rjmp switch
                                  
                                  
                                  
@@ -1117,18 +1117,18 @@ F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm(1)
                                  										;;;     delay function    ;;;;;
                                  delay10ms:
                                  	
-000022 ec88                      	ldi	iLoopRl,LOW(iVal)	; intialize inner loop count in inner
-000023 e090                      	ldi	iLoopRh,HIGH(iVal)	; loop high and low registers
+000021 ec88                      	ldi	iLoopRl,LOW(iVal)	; intialize inner loop count in inner
+000022 e090                      	ldi	iLoopRh,HIGH(iVal)	; loop high and low registers
                                  
-000024 958a                      iLoop:	dec	iLoopRl		; decrement inner loop registers
-000025 f7f1                      	brne	iLoop			; branch to iLoop if iLoop registers != 0
+000023 958a                      iLoop:	dec	iLoopRl		; decrement inner loop registers
+000024 f7f1                      	brne	iLoop			; branch to iLoop if iLoop registers != 0
                                  
-000026 952a                      	dec	loopCt			; decrement outer loop register
-000027 f7d1                      	brne	delay10ms		; branch to oLoop if outer loop register != 0
+000025 952a                      	dec	loopCt			; decrement outer loop register
+000026 f7d1                      	brne	delay10ms		; branch to oLoop if outer loop register != 0
                                  
-000028 e228                      	ldi loopCt,oval ; outer loop of delay
-000029 0000                      	nop
-00002a 9508                      	ret				; return from subroutine
+000027 e228                      	ldi loopCt,oval ; outer loop of delay
+000028 0000                      	nop
+000029 9508                      	ret				; return from subroutine
                                  
                                  
                                  
@@ -1136,96 +1136,104 @@ F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm(1)
                                  										;;;     forward function    ;;;;;
                                  
                                  forward:
-00002b ef6a                      	ldi	motorinnerloop,imotor	; intialize inner loop count of motor
+00002a ef6a                      	ldi	motorinnerloop, imotor	; intialize inner loop count of motor
                                  	
                                  
                                  motorLoop:	
                                  	;Motor forward a circle
-00002c e031                      	ldi r19,0b00000001   ; stepper mortor control
-00002d b935                      	out	PORTB,r19
+                                 	;ldi r19,0b00000001   ; stepper mortor control
+                                 	;out	PORTB,r19
+00002b 9a28                      	sbi portb,pb0
                                  
-00002e dff3                      	rcall delay10ms
+00002c dff4                      	rcall delay10ms
                                  
-00002f e032                      	ldi r19,0b00000010    ; stepper mortor control
-000030 b935                      	out	PORTB,r19
+                                 	;ldi r19,0b00000010    ; stepper mortor control
+                                 	;out	PORTB,r19
+00002d 9a29                      	sbi portb,pb1
                                  
-000031 dff0                      	rcall delay10ms
+00002e dff2                      	rcall delay10ms
                                  
-000032 e034                      	ldi r19,0b00000100    ; stepper mortor control
-000033 b935                      	out	PORTB,r19
+                                 	;ldi r19,0b00000100    ; stepper mortor control
+                                 	;out	PORTB,r19
+00002f 9a2a                      	sbi portb,pb2
                                  
-000034 dfed                      	rcall delay10ms
+000030 dff0                      	rcall delay10ms
                                  
-000035 e038                      	ldi r19,0b00001000    ; stepper mortor control
-000036 b935                      	out	PORTB,r19
+                                 	;ldi r19,0b00001000    ; stepper mortor control
+                                 	;out	PORTB,r19
+000031 9a2b                      	sbi portb,pb3
                                  
-000037 dfea                      	rcall delay10ms
+000032 dfee                      	rcall delay10ms
                                  
                                  
-000038 956a                      	dec	motorinnerloop		; decrement inner motor loop registers
-000039 f791                      	brne	motorLoop			; branch to motorLoop if iLoop registers != 0
+000033 956a                      	dec	motorinnerloop		; decrement inner motor loop registers
+000034 f7b1                      	brne	motorLoop			; branch to motorLoop if iLoop registers != 0
                                  
-00003a 957a                      	dec	motorouterloop	; decrement outer loop register
-00003b f779                      	brne	forward		; branch to oLoop if outer loop register != 0
+000035 957a                      	dec	motorouterloop	; decrement outer loop register
+000036 f799                      	brne	forward		; branch to oLoop if outer loop register != 0
                                  
-00003c e174                      	ldi motorouterloop,omotor ;motor outer loop count
-00003d 9508                      	ret				; return from subroutine
+000037 e174                      	ldi motorouterloop,omotor ;motor outer loop count
+000038 9508                      	ret				; return from subroutine
                                  
                                  
                                  											;;;     reverse function    ;;;;;
                                  
                                  
                                  reverse:
-00003e ef6a                      ldi	motorinnerloop,imotor	; intialize inner loop count of motor
+000039 ef6a                      ldi	motorinnerloop,imotor	; intialize inner loop count of motor
                                  	
                                  
                                  motorLoop2:	
                                  	;Motor forward a circle
-00003f e038                      	ldi r19,0b00001000   ; stepper mortor control
-000040 b935                      	out	PORTB,r19
+                                 	;ldi r19,0b00001000   ; stepper mortor control
+                                 	;out	PORTB,r19
+00003a 9a2b                      	sbi portb,pb3
                                  
-000041 dfe0                      	rcall delay10ms
+00003b dfe5                      	rcall delay10ms
                                  
-000042 e034                      	ldi r19,0b00000100    ; stepper mortor control
-000043 b935                      	out	PORTB,r19
+                                 	;ldi r19,0b00000100    ; stepper mortor control
+                                 	;out	PORTB,r19
+00003c 9a2a                      	sbi portb,pb2
                                  
-000044 dfdd                      	rcall delay10ms
+00003d dfe3                      	rcall delay10ms
                                  
-000045 e032                      	ldi r19,0b00000010    ; stepper mortor control
-000046 b935                      	out	PORTB,r19
+                                 	;ldi r19,0b00000010    ; stepper mortor control
+                                 	;out	PORTB,r19
+00003e 9a29                      	sbi portb,pb1
                                  
-000047 dfda                      	rcall delay10ms
+00003f dfe1                      	rcall delay10ms
                                  
-000048 e031                      	ldi r19,0b00000001    ; stepper mortor control
-000049 b935                      	out	PORTB,r19
+                                 	;ldi r19,0b00000001    ; stepper mortor control
+                                 	;out	PORTB,r19
+000040 9a28                      	sbi portb,pb0
                                  
-00004a dfd7                      	rcall delay10ms
+000041 dfdf                      	rcall delay10ms
                                  
                                  
-00004b 956a                      	dec	motorinnerloop		; decrement inner motor loop registers
-00004c f791                      	brne	motorLoop2			; branch to motorLoop if iLoop registers != 0
+000042 956a                      	dec	motorinnerloop		; decrement inner motor loop registers
+000043 f7b1                      	brne	motorLoop2			; branch to motorLoop if iLoop registers != 0
                                  
-00004d 957a                      	dec	motorouterloop	; decrement outer loop register
-00004e f779                      	brne	reverse		; branch to oLoop if outer loop register != 0
+000044 957a                      	dec	motorouterloop	; decrement outer loop register
+000045 f799                      	brne	reverse		; branch to oLoop if outer loop register != 0
                                  
-00004f e174                      	ldi motorouterloop,omotor ;motor outer loop count
-000050 9508                      	ret				; return from subroutine
+000046 e174                      	ldi motorouterloop,omotor ;motor outer loop count
+000047 9508                      	ret				; return from subroutine
                                  
                                  
                                  							;;;;; long delay function ;;;;;;;
                                  
                                  delay1sec:	
-000051 e05a                      		ldi	delay1seciloop,dval	; intialize inner loop count in inner
+000048 e05a                      		ldi	delay1seciloop,dval	; intialize inner loop count in inner
                                  
                                  longdelayLoop:
-000052 dfcf                      	rcall delay10ms 
-000053 955a                      	dec	delay1seciloop		; decrement inner loop registers
-000054 f7e9                      	brne	longdelayLoop			; branch to iLoop if iLoop registers != 0
+000049 dfd7                      	rcall delay10ms 
+00004a 955a                      	dec	delay1seciloop		; decrement inner loop registers
+00004b f7e9                      	brne	longdelayLoop			; branch to iLoop if iLoop registers != 0
                                  
-000055 954a                      	dec	delay1secoloop			; decrement outer loop register
-000056 f7d1                      	brne	delay1sec		; branch if outer loop register != 0
+00004c 954a                      	dec	delay1secoloop			; decrement outer loop register
+00004d f7d1                      	brne	delay1sec		; branch if outer loop register != 0
                                  
-000057 e055                      	ldi delay1seciloop,dval2 ; outer loop of delay
+00004e e055                      	ldi delay1seciloop,dval2 ; outer loop of delay
                                  	
 
 
@@ -1246,7 +1254,7 @@ counted separately from r26..r31 here.
 "ATmega328P" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:   6 r17:   1 r18:   3 r19:  18 r20:   1 
+r13:   0 r14:   0 r15:   0 r16:   6 r17:   1 r18:   3 r19:   2 r20:   1 
 r21:   3 r22:   4 r23:   5 r24:   2 r25:   1 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   0 r31:   0 
 Registers used: 10 out of 35 (28.6%)
@@ -1262,11 +1270,11 @@ clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   1 cls   :   0
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
 cpi   :   0 cpse  :   0 dec   :   8 eor   :   0 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   0 jmp   :   0 
-ld    :   0 ldd   :   0 ldi   :  23 lds   :   0 lpm   :   0 lsl   :   0 
+ld    :   0 ldd   :   0 ldi   :  15 lds   :   0 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   1 or    :   0 ori   :   0 out   :  12 pop   :   0 
+neg   :   0 nop   :   1 or    :   0 ori   :   0 out   :   4 pop   :   0 
 push  :   0 rcall :  19 ret   :   4 reti  :   0 rjmp  :   4 rol   :   0 
-ror   :   0 sbc   :   0 sbci  :   0 sbi   :   3 sbic  :   0 sbis  :   2 
+ror   :   0 sbc   :   0 sbci  :   0 sbi   :  10 sbic  :   0 sbis  :   2 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
 sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   0 
@@ -1276,7 +1284,7 @@ Instructions used: 12 out of 113 (10.6%)
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000b2    178      0    178   32768   0.5%
+[.cseg] 0x000000 0x0000a0    160      0    160   32768   0.5%
 [.dseg] 0x000100 0x000100      0      0      0    2048   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 

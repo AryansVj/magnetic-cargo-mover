@@ -35,7 +35,7 @@
 	out	DDRB,r19
 	CBI DDRD, pd6   ; set PD6 as input (ir sensor input)
 	CBI DDRD, pd7   ; switch as input
-	SBI DDRD,pd4	;electromagnet
+	; SBI DDRB, pb4	; electromagnet
 
 	ldi loopCt,oval ; outer loop of delay
 	ldi motorouterloop,omotor ;motor outer loop count
@@ -51,13 +51,13 @@ start:
 			rjmp reverse_loop
 			
 			;forward
-			sbi portd, pd4 ;magnet on
-			rcall delay1sec	;long delay
+			sbi portb, pb4 ; magnet on
+			rcall delay1sec	; long delay
 	
 			rcall forward	;motor
 			rcall delay1sec	;long delay
 			;return to the initial position
-			cbi portd,pd4	;magnet off
+			cbi portb,pb4	;magnet off
 			rcall delay1sec	;long delay
 			rcall reverse	;motor
 
@@ -66,11 +66,11 @@ start:
 
 ;;;;;;;;;;;;;;;;;;;;;; reverse motor ;;;;;;;;;;;;
 reverse_loop:
-			sbi portd, pd4 ;magnet on
+			sbi portb, pb4 ; magnet on
 			rcall delay1sec	;long delay
 			rcall reverse ;motor
 			rcall delay1sec	;long delay
-			cbi portd,pd4	;magnet off
+			cbi portb, pb4	;magnet off
 			rcall delay1sec	;long delay
 			rcall forward ;motor
 	
@@ -105,28 +105,32 @@ iLoop:	dec	iLoopRl		; decrement inner loop registers
 										;;;     forward function    ;;;;;
 
 forward:
-	ldi	motorinnerloop,imotor	; intialize inner loop count of motor
+	ldi	motorinnerloop, imotor	; intialize inner loop count of motor
 	
 
 motorLoop:	
 	;Motor forward a circle
-	ldi r19,0b00000001   ; stepper mortor control
-	out	PORTB,r19
+	;ldi r19,0b00000001   ; stepper mortor control
+	;out	PORTB,r19
+	sbi portb,pb0
 
 	rcall delay10ms
 
-	ldi r19,0b00000010    ; stepper mortor control
-	out	PORTB,r19
+	;ldi r19,0b00000010    ; stepper mortor control
+	;out	PORTB,r19
+	sbi portb,pb1
 
 	rcall delay10ms
 
-	ldi r19,0b00000100    ; stepper mortor control
-	out	PORTB,r19
+	;ldi r19,0b00000100    ; stepper mortor control
+	;out	PORTB,r19
+	sbi portb,pb2
 
 	rcall delay10ms
 
-	ldi r19,0b00001000    ; stepper mortor control
-	out	PORTB,r19
+	;ldi r19,0b00001000    ; stepper mortor control
+	;out	PORTB,r19
+	sbi portb,pb3
 
 	rcall delay10ms
 
@@ -150,23 +154,27 @@ ldi	motorinnerloop,imotor	; intialize inner loop count of motor
 
 motorLoop2:	
 	;Motor forward a circle
-	ldi r19,0b00001000   ; stepper mortor control
-	out	PORTB,r19
+	;ldi r19,0b00001000   ; stepper mortor control
+	;out	PORTB,r19
+	sbi portb,pb3
 
 	rcall delay10ms
 
-	ldi r19,0b00000100    ; stepper mortor control
-	out	PORTB,r19
+	;ldi r19,0b00000100    ; stepper mortor control
+	;out	PORTB,r19
+	sbi portb,pb2
 
 	rcall delay10ms
 
-	ldi r19,0b00000010    ; stepper mortor control
-	out	PORTB,r19
+	;ldi r19,0b00000010    ; stepper mortor control
+	;out	PORTB,r19
+	sbi portb,pb1
 
 	rcall delay10ms
 
-	ldi r19,0b00000001    ; stepper mortor control
-	out	PORTB,r19
+	;ldi r19,0b00000001    ; stepper mortor control
+	;out	PORTB,r19
+	sbi portb,pb0
 
 	rcall delay10ms
 

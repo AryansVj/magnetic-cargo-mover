@@ -1,19 +1,19 @@
 <ASSEMBLER_INFO>
  <VERSION>2.2.8</VERSION>
  <DEVICE>"ATmega328P"</DEVICE>
- <WORKING_DIR>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\Debug</WORKING_DIR>
+ <WORKING_DIR>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\Debug</WORKING_DIR>
  <INCLUDE_PATH>
   <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
   <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
   <DIR></DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</SOURCE_FILE>
+ <SOURCE_FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pdef.inc</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
-  <FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\Debug\main.obj</FILE>
+  <FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\Debug\main.obj</FILE>
  </OBJECT_FILES>
  <HEX_FILES>
   <FILE>main.hex</FILE>
@@ -23,17 +23,17 @@
   <FILE>main.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <start><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>44</LINE></start>
-  <switch><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>45</LINE></switch>
-  <ir_logic><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>49</LINE></ir_logic>
-  <reverse_loop><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>68</LINE></reverse_loop>
-  <delay1sec><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>186</LINE></delay1sec>
-  <forward><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>107</LINE></forward>
-  <reverse><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>147</LINE></reverse>
-  <delay10ms><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>87</LINE></delay10ms>
-  <iLoop><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>92</LINE></iLoop>
-  <motorLoop><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>111</LINE></motorLoop>
-  <motorLoop2><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>151</LINE></motorLoop2>
-  <longdelayLoop><FILE>F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>189</LINE></longdelayLoop>
+  <start><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>44</LINE></start>
+  <switch><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>45</LINE></switch>
+  <ir_logic><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>49</LINE></ir_logic>
+  <reverse_loop><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>68</LINE></reverse_loop>
+  <delay1sec><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>194</LINE></delay1sec>
+  <forward><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>107</LINE></forward>
+  <reverse><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>151</LINE></reverse>
+  <delay10ms><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>87</LINE></delay10ms>
+  <iLoop><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>92</LINE></iLoop>
+  <motorLoop><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>111</LINE></motorLoop>
+  <motorLoop2><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>155</LINE></motorLoop2>
+  <longdelayLoop><FILE>D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm</FILE><LINE>197</LINE></longdelayLoop>
  </LABELS>
 </ASSEMBLER_INFO>

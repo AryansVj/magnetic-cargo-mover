@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  F:\assembly projects\New folder\final\magnetic-cargo-mover\main\main\main.asm Thu Mar 09 12:51:57 2023
+AVRASM ver. 2.2.8  D:\My Files\ACA\SEM 5\EE322 - Embedded Systems Design\Mini Project\magnetic-cargo-mover\main\main\main.asm Thu Mar 09 13:51:15 2023
 
 
 EQU  SIGNATURE_000 0000001e
@@ -710,15 +710,15 @@ EQU  dval         0000000a
 EQU  dval2        00000005
 EQU  imotor       000000fa
 EQU  omotor       00000014
-CSEG start        0000000e
-CSEG switch       0000000e
-CSEG ir_logic     00000010
-CSEG reverse_loop 0000001a
-CSEG delay1sec    00000051
-CSEG forward      0000002b
-CSEG reverse      0000003e
-CSEG delay10ms    00000022
-CSEG iLoop        00000024
-CSEG motorLoop    0000002c
-CSEG motorLoop2   0000003f
-CSEG longdelayLoop 00000052
+CSEG start        0000000d
+CSEG switch       0000000d
+CSEG ir_logic     0000000f
+CSEG reverse_loop 00000019
+CSEG delay1sec    00000048
+CSEG forward      0000002a
+CSEG reverse      00000039
+CSEG delay10ms    00000021
+CSEG iLoop        00000023
+CSEG motorLoop    0000002b
+CSEG motorLoop2   0000003a
+CSEG longdelayLoop 00000049
